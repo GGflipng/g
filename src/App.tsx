@@ -400,23 +400,23 @@ function CoinMesh() {
   });
 
   function playWarmUpWebPlayer() {
-    new Audio("/nada2.mp3").play();
+    new Audio(`${location.href}/nada2.mp3`).play();
   }
 
   function playGameWin() {
-    new Audio("/game-win2.mp3").play();
+    new Audio(`${location.href}/game-win2.mp3`).play();
   }
 
   function playAnticipation() {
-    new Audio("/drop2.mp3").play();
+    new Audio(`${location.href}/drop2.mp3`).play();
   }
 
   function playFlip() {
-    new Audio("/coin-flip2.mp3").play();
+    new Audio(`${location.href}/coin-flip2.mp3`).play();
   }
 
   function playWhosh() {
-    new Audio("/whoosh2.mp3").play();
+    new Audio(`${location.href}/whoosh2.mp3`).play();
   }
 
   return (

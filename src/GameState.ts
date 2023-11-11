@@ -1,6 +1,6 @@
 import { atom } from "jotai";
 
-const isCoinFlippingAnimation = atom(8);
+const isCoinFlippingAnimation = atom(0);
 const isFlipButtonDisabled = atom(false);
 const isFlipButtonHovered = atom(false);
 const cameraPosition = atom(0);
