@@ -1,5 +1,6 @@
 import {
   Cloud,
+  Clouds,
   MeshReflectorMaterial,
   Shadow,
   Sparkles,
@@ -86,17 +87,19 @@ function App() {
           color={new Color(0.7, 0.7, 0)}
         />
 
-        <Cloud
-          position={[0, 450, 0]}
-          seed={1}
-          speed={0.1}
-          growth={2}
-          segments={100}
-          volume={20}
-          opacity={1}
-          bounds={[10, 20, 20]}
-          color={[1, 1, 1]}
-        />
+        <Clouds texture={"/cloud.png"}>
+          <Cloud
+            position={[0, 450, 0]}
+            seed={1}
+            speed={0.1}
+            growth={2}
+            segments={100}
+            volume={20}
+            opacity={1}
+            bounds={[10, 20, 20]}
+            color={[1, 1, 1]}
+          />
+        </Clouds>
 
         <EffectComposer disableNormalPass multisampling={8}>
           <Bloom
@@ -175,6 +178,9 @@ function CoinMesh() {
         }
 
         if (isCoinFlippingAnimationFrame === 3) {
+          if (soundEnabled) {
+            playSoftWind();
+          }
           setIsCoinFlippingAnimationFrame(4);
           return;
         }
@@ -402,23 +408,27 @@ function CoinMesh() {
   });
 
   function playWarmUpWebPlayer() {
-    new Audio(`${location.href}/nada2.mp3`).play();
+    new Audio(`${location.href}/nada.mp3`).play();
+  }
+
+  function playSoftWind() {
+    new Audio(`${location.href}/soft-wind.mp3`).play();
   }
 
   function playGameWin() {
-    new Audio(`${location.href}/game-win2.mp3`).play();
+    new Audio(`${location.href}/game-win.mp3`).play();
   }
 
   function playAnticipation() {
-    new Audio(`${location.href}/drop2.mp3`).play();
+    new Audio(`${location.href}/drop.mp3`).play();
   }
 
   function playFlip() {
-    new Audio(`${location.href}/coin-flip2.mp3`).play();
+    new Audio(`${location.href}/coin-flip.mp3`).play();
   }
 
   function playWhosh() {
-    new Audio(`${location.href}/whoosh2.mp3`).play();
+    new Audio(`${location.href}/whoosh.mp3`).play();
   }
 
   return (

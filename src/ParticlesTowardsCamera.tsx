@@ -64,7 +64,7 @@ const ParticlesTowardsCamera = ({ color }: { color: any }) => {
           flip ? (Math.random() + 1) * 5 : (Math.random() + 1) * 5 * -1
         );
         particles[index].speed = (Math.random() * 200) / randomNumber(1, 2);
-        particle.position.set(0, -10, -8);
+        particle.position.set(0, -15, -12);
         const scaleFactor = Math.random() * 3 + 0.1;
         particle.scale.set(scaleFactor, scaleFactor, scaleFactor);
       }
