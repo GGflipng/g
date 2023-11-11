@@ -167,8 +167,10 @@ function CoinMesh() {
 
         if (isCoinFlippingAnimationFrame === 2) {
           setIsCoinFlippingAnimationFrame(3);
-          playFlip();
-          playWhosh();
+          if (soundEnabled) {
+            playFlip();
+            playWhosh();
+          }
           return;
         }
 
