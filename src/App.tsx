@@ -87,7 +87,7 @@ function App() {
           color={new Color(0.7, 0.7, 0)}
         />
 
-        <Clouds texture={"/cloud.png"}>
+        <Clouds texture={`${location.href}/cloud.png`}>
           <Cloud
             position={[0, 450, 0]}
             seed={1}
